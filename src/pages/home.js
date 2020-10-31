@@ -5,7 +5,7 @@ import { newContextComponents } from "@drizzle/react-components";
 const { ContractData } = newContextComponents;
 function Home({ drizzle, drizzleState }) {
   return (
-    <div className="container">
+    <div>
       <div className="heading">
         <img id="headingimg" src={favicon} alt="favicon"></img>
       </div>
@@ -17,43 +17,39 @@ function Home({ drizzle, drizzleState }) {
       </div>
       <div className="cards">
         <div className="card">
-          <img id="lemon" src={lemonicon} alt="lemonicon"></img>
-          <div className="stats">Your $dLEMO Balance
-          <ContractData
-            drizzle={drizzle}
-            drizzleState={drizzleState}
-            contract="TutorialToken"
-            method="totalSupply"
-            methodArgs={[{ from: drizzleState.accounts[0] }]}
-          />{" "}
-          <ContractData
-            drizzle={drizzle}
-            drizzleState={drizzleState}
-            contract="TutorialToken"
-            method="symbol"
-            hideIndicator
-          />
-        </div></div>
+          <img id="lemonimg" src={lemonicon} alt="lemonicon"></img>
+          <div className="stats">
+            Your gLEMO Balance
+            <ContractData
+              drizzle={drizzle}
+              drizzleState={drizzleState}
+              contract="TutorialToken"
+              method="balanceOf"
+              methodArgs={[drizzleState.accounts[0]]}
+            />
+          </div>
+        </div>
         <div className="card">
-          <div className="stats"> Total dLEMO Supply
-                   <ContractData
-            drizzle={drizzle}
-            drizzleState={drizzleState}
-            contract="TutorialToken"
-            method="balanceOf"
-            methodArgs={[drizzleState.accounts[0]]}
-          /></div>
-
+          <div className="stats">
+            Total gLEMO Supply
+            <ContractData
+              drizzle={drizzle}
+              drizzleState={drizzleState}
+              contract="TutorialToken"
+              method="totalSupply"
+              methodArgs={[{ from: drizzleState.accounts[0] }]}
+            />{" "}
+            <ContractData
+              drizzle={drizzle}
+              drizzleState={drizzleState}
+              contract="TutorialToken"
+              method="symbol"
+              hideIndicator
+            />
+          </div>
         </div>
       </div>
       <style jsx>{`
-        .container {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          justify-content: center;
-          border-radius: 15px;
-        }
         .title {
           font-family: "Kaushan Script", sans-serif;
           font-size: 36px;
@@ -82,7 +78,6 @@ function Home({ drizzle, drizzleState }) {
           padding: 0px;
           text-align: center;
         }
-
         #headingimg {
           display: flex;
           height: 130px;
@@ -102,26 +97,25 @@ function Home({ drizzle, drizzleState }) {
           margin: 10px;
           border-radius: 12px;
         }
-        #lemon {
-            margin: 25px -50px 0px 25px;
+        #lemonimg {
+          margin: 25px -50px 0px 25px;
           height: 50px;
         }
         .stats {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            flex-direction: column;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          flex-direction: column;
         }
         @media only screen and (max-width: 800px) {
           .cards {
             flex-direction: column;
           }
-
           .card {
             display: flex;
             width: 80%;
           }
-          #lemon {
+          #lemonimg {
             height: 50px;
           }
         }

@@ -7,18 +7,6 @@ import "./main.css";
 import web3 from "web3";
 var Web3 = require("web3");
 function Main({ drizzle, drizzleState }) {
-  useEffect(() => { //truffle connection
-    if (typeof web3 !== "undefined") {
-      Main.web3Provider = web3.currentProvider;
-      web3 = new Web3(web3.currentProvider);
-    } else {
-      // If no injected web3 instance is detected, fallback to Ganache.
-      Main.web3Provider = new web3.providers.HttpProvider(
-        "http://127.0.0.1:7545"
-      );
-      web3 = new Web3(Main.web3Provider);
-    }
-  }, []);
   useEffect(() => { //metamask connection
     if (typeof window.ethereum !== "undefined") {
       console.log("MetaMask is installed!");
@@ -57,7 +45,7 @@ function Main({ drizzle, drizzleState }) {
       <div className="App">
         <div className="nav">
           <Link to="/">
-            <img src={favicon} alt="favicon"></img>
+            <img id="favicon" src={favicon} alt="favicon"></img>
           </Link>
           <Link to="/">
             <h3 id="home">Home</h3>

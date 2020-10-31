@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
-img {
+#favicon {
   height: 50px;
 }
 .nav {
@@ -33,7 +33,7 @@ button:hover {
 }
 footer {
   position: fixed;
-  left: 20%;
+  left: 25%;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -41,7 +41,7 @@ footer {
 
 .footerlinks {
   width: 50%;
-  margin: 10px 0px 10px 50px;
+  margin: 0px 0px 10px 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
