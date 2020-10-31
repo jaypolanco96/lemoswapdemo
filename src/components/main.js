@@ -4,8 +4,6 @@ import Home from "../pages/home";
 import About from "../pages/about";
 import favicon from "../favicon.png";
 import "./main.css";
-import web3 from "web3";
-var Web3 = require("web3");
 function Main({ drizzle, drizzleState }) {
   useEffect(() => { //metamask connection
     if (typeof window.ethereum !== "undefined") {
