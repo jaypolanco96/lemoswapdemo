@@ -1,0 +1,100 @@
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "../pages/home";
+import About from "../pages/about";
+import favicon from "../favicon.png";
+import "./main.css";
+import web3 from "web3";
+var Web3 = require("web3");
+function Main({ drizzle, drizzleState }) {
+  useEffect(() => { //truffle connection
+    if (typeof web3 !== "undefined") {
+      Main.web3Provider = web3.currentProvider;
+      web3 = new Web3(web3.currentProvider);
+    } else {
+      // If no injected web3 instance is detected, fallback to Ganache.
+      Main.web3Provider = new web3.providers.HttpProvider(
+        "http://127.0.0.1:7545"
+      );
+      web3 = new Web3(Main.web3Provider);
+    }
+  }, []);
+  useEffect(() => { //metamask connection
+    if (typeof window.ethereum !== "undefined") {
+      console.log("MetaMask is installed!");
+      getAccount();
+    }
+    const ethereumButton = document.querySelector(".enableEthereumButton");
+    const walletnumber = document.getElementById("walletnumber");
+
+    ethereumButton.addEventListener("click", () => {
+      getAccount();
+    });
+
+    async function getAccount() {
+      const ethereum = window.ethereum;
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      const account = accounts[0];
+      walletnumber.innerHTML =
+        account[0] +
+        account[1] +
+        account[2] +
+        account[3] +
+        account[4] +
+        account[5] +
+        "..." +
+        account[38] +
+        account[39] +
+        account[40] +
+        account[41];
+    }
+  }, []);
+  // destructure drizzle and drizzleState from props
+  return (
+    <Router>
+      <div className="App">
+        <div className="nav">
+          <Link to="/">
+            <img src={favicon} alt="favicon"></img>
+          </Link>
+          <Link to="/">
+            <h3 id="home">Home</h3>
+          </Link>
+          <Link to="/about">
+            <h3>About</h3>
+          </Link>
+          <Link to="/">
+            <button id="unlockbutton" className="enableEthereumButton">
+              <h3 id="walletnumber">Unlock Wallet</h3>
+            </button>
+          </Link>
+        </div>
+        <footer>
+          <div className="footerlinks">
+          <Link to ="/">
+            LemoSwap Contract
+          </Link>
+          <Link to ="/">
+            Whitepaper
+          </Link>
+          <Link to ="/">
+            Dev
+          </Link></div>
+        </footer>
+
+        <Switch>
+          <Route exact path="/">
+            <Home drizzle={drizzle} drizzleState={drizzleState}/>
+          </Route>
+          <Route exact path="/about">
+            <About drizzle={drizzle} drizzleState={drizzleState}/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default Main;
