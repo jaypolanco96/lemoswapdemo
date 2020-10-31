@@ -4,11 +4,7 @@ import Home from "../pages/home";
 import About from "../pages/about";
 import favicon from "../favicon.png";
 import "./mainlayout.css";
-<<<<<<< HEAD:src/components/MainLayout.js
 function MainLayout({ drizzle, drizzleState }) {
-=======
-function Main({ drizzle, drizzleState }) {
->>>>>>> 3924bdea00dbfeabab066362d2e92c322281921f:src/components/main.js
   useEffect(() => { //metamask connection
     if (typeof window.ethereum !== "undefined") {
       console.log("MetaMask is installed!");
@@ -61,7 +57,7 @@ function Main({ drizzle, drizzleState }) {
             </button>
           </Link>
         </div>
-        <div className="footer">
+        <footer>
           <div className="footerlinks">
           <Link to ="/">
             LemoSwap Contract
@@ -72,7 +68,7 @@ function Main({ drizzle, drizzleState }) {
           <Link to ="/">
             Dev
           </Link></div>
-        </div>
+        </footer>
 
         <Switch>
           <Route exact path="/">

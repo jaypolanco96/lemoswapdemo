@@ -31,24 +31,13 @@ button:hover {
 button:hover {
   color: #4b4b4b;
 }
-<<<<<<< HEAD:src/components/mainlayout.css
 footer {
   position: absolute;
-
   left: 20%;
-  bottom: 0;
+  bottom: 0px;
   right: 0;
   padding: 1rem;
   width: 75%;
-=======
-.footer {
-  position: absolute;
-  
-  left: 20%;
-  bottom: 0px;
-  width: 100%;
->>>>>>> 3924bdea00dbfeabab066362d2e92c322281921f:src/components/main.css
-  
 }
 
 .footerlinks {
