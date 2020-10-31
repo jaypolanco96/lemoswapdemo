@@ -65,6 +65,7 @@ function About({ drizzle, drizzleState }) {
           labels={["To Address", "Amount to Send"]}
         />
       </div>
+
     </div>
   );
 }

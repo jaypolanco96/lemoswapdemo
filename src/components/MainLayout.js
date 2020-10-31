@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../pages/home";
 import About from "../pages/about";
 import favicon from "../favicon.png";
-import "./main.css";
-function Main({ drizzle, drizzleState }) {
+import "./mainlayout.css";
+function MainLayout({ drizzle, drizzleState }) {
   useEffect(() => { //metamask connection
     if (typeof window.ethereum !== "undefined") {
       console.log("MetaMask is installed!");
@@ -83,4 +83,4 @@ function Main({ drizzle, drizzleState }) {
   );
 }
 
-export default Main;
+export default MainLayout;

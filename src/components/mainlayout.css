@@ -32,16 +32,19 @@ button:hover {
   color: #4b4b4b;
 }
 footer {
-  position: fixed;
-  left: 25%;
+  position: absolute;
+
+  left: 20%;
   bottom: 0;
-  width: 100%;
-  text-align: center;
+  right: 0;
+  padding: 1rem;
+  width: 75%;
+  
 }
 
 .footerlinks {
   width: 50%;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 10px 10px;
   display: flex;
   justify-content: space-between;
 }
