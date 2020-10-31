@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import favicon from "../favicon.png";
 import lemonicon from "../lemonicon.png";
 import { newContextComponents } from "@drizzle/react-components";
@@ -6,6 +7,16 @@ const { ContractData } = newContextComponents;
 function Home({ drizzle, drizzleState }) {
   return (
     <div>
+      <Helmet>
+        <title>Home</title>
+        <meta charSet="utf-8" />
+        <meta name="theme-color" content="#000"></meta>
+        <meta name="msapplication-navbutton-color" content="#000"></meta>
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="#000"
+        ></meta>
+      </Helmet>
       <div className="heading">
         <img id="headingimg" src={favicon} alt="favicon"></img>
       </div>

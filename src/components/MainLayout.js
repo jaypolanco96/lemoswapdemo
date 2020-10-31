@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../pages/home";
 import About from "../pages/about";
 import favicon from "../favicon.png";
-import "./main.css";
+import "./mainlayout.css";
 function Main({ drizzle, drizzleState }) {
   useEffect(() => { //metamask connection
     if (typeof window.ethereum !== "undefined") {
@@ -57,7 +57,7 @@ function Main({ drizzle, drizzleState }) {
             </button>
           </Link>
         </div>
-        <footer>
+        <div className="footer">
           <div className="footerlinks">
           <Link to ="/">
             LemoSwap Contract
@@ -68,7 +68,7 @@ function Main({ drizzle, drizzleState }) {
           <Link to ="/">
             Dev
           </Link></div>
-        </footer>
+        </div>
 
         <Switch>
           <Route exact path="/">
