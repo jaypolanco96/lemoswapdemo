@@ -57,18 +57,6 @@ function MainLayout({ drizzle, drizzleState }) {
             </button>
           </Link>
         </div>
-        <footer>
-          <div className="footerlinks">
-          <Link to ="/">
-            LemoSwap Contract
-          </Link>
-          <Link to ="/">
-            Whitepaper
-          </Link>
-          <Link to ="/">
-            Dev
-          </Link></div>
-        </footer>
 
         <Switch>
           <Route exact path="/">

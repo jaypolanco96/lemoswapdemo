@@ -31,18 +31,6 @@ button:hover {
 button:hover {
   color: #4b4b4b;
 }
-footer {
-  position: absolute;
-  left: 20%;
-  bottom: 0px;
-  right: 0;
-  padding: 1rem;
-  width: 75%;
-}
 
-.footerlinks {
-  width: 50%;
-  margin: 0px 0px 10px 10px;
-  display: flex;
-  justify-content: space-between;
-}
+
+

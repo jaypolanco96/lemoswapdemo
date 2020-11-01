@@ -59,6 +59,17 @@ function Home({ drizzle, drizzleState }) {
             />
           </div>
         </div>
+        <footer id="homefooter">
+          <a id="footerlinks" href="http://github.com">
+            LemoSwap Contract
+          </a>
+          <a id="footerlinks" href="http://github.com">
+            Whitepaper
+          </a>
+          <a id="footerlinks" href="http://github.com">
+            Dev
+          </a>
+        </footer>
       </div>
       <style jsx>{`
         .title {
@@ -118,6 +129,18 @@ function Home({ drizzle, drizzleState }) {
           justify-content: center;
           flex-direction: column;
         }
+        #homefooter {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+          }
+
+          #footerlinks {
+            margin: 30px;
+          }
         @media only screen and (max-width: 800px) {
           .cards {
             flex-direction: column;
@@ -128,6 +151,18 @@ function Home({ drizzle, drizzleState }) {
           }
           #lemonimg {
             height: 50px;
+          }
+          #homefooter {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+          }
+
+          #footerlinks {
+            margin: 5px;
           }
         }
       `}</style>
