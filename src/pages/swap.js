@@ -1,4 +1,5 @@
 import React from "react";
+import downarrow from '../downarrow.svg'
 import { newContextComponents } from "@drizzle/react-components";
 const { ContractData } = newContextComponents;
 function Swap({ drizzle, drizzleState }) {
@@ -40,7 +41,7 @@ function Swap({ drizzle, drizzleState }) {
               <button id="maxbutton">MAX</button>
               <button id="coinbutton">gLEMO</button>
             </div>
-          </div>
+          </div><div><img id="downarrow"src={downarrow} alt="downarrow"></img></div>
           <div className="topcontainer">
             <div
               style={{
@@ -48,8 +49,9 @@ function Swap({ drizzle, drizzleState }) {
                 fontWeight: "0",
                 fontFamily: "Inter",
               }}
-              className="topheader"
+              className="topheader2"
             >
+                
               To
               <div>
                 Balance:{" "}
@@ -62,7 +64,7 @@ function Swap({ drizzle, drizzleState }) {
                 />
               </div>
             </div>
-            <div className="topheader">
+            <div className="topheader2">
               <input
                 style={{
                   color: "rgb(86, 90, 105)",
@@ -76,7 +78,7 @@ function Swap({ drizzle, drizzleState }) {
               <button id="maxbutton">MAX</button>
               <button id="coinbutton">USDC</button>
             </div>
-            <div className="topheader">
+            <div className="topheader2">
               <div
                 style={{
                   color: "rgb(86, 90, 105)",
@@ -118,14 +120,16 @@ function Swap({ drizzle, drizzleState }) {
           margin: 5px 15px 50px 10px;
         }
         .topheader {
-          margin: 20px;
+            margin: 20px 20px 20px 20px;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
         }
-        code {
-          font-size: 14px;
-          color: rgb(86, 90, 105);
+        .topheader2 {
+            margin: 0px 20px 20px 20px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
         }
         #inputs {
           font-size: 24px;
@@ -157,11 +161,15 @@ function Swap({ drizzle, drizzleState }) {
           cursor: pointer;
         }
         #coinbutton {
-            height: 28px;
+          height: 28px;
           border-style: none;
           border-radius: 0.5rem;
           font-size: 0.875rem;
           font-weight: 500;
+        }
+        #downarrow {
+            margin: 5px;
+            height: 16px;
         }
         @media only screen and (max-width: 600px) {
           .swapbox {
