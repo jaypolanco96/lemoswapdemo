@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Helmet from "react-helmet";
 import favicon from "../favicon.png";
 import lemonicon from "../lemonicon.png";
@@ -27,23 +28,26 @@ function Home({ drizzle, drizzleState }) {
         </h3>
       </div>
       <div className="cards">
-        <div className="card">
-          <img id="lemonimg" src={lemonicon} alt="lemonicon"></img>
-          <div className="stats">
-            Your gLEMO Balance
-            <ContractData
-              drizzle={drizzle}
-              drizzleState={drizzleState}
-              contract="TutorialToken"
-              method="balanceOf"
-              methodArgs={[drizzleState.accounts[0]]}
-            />
-          </div>
-        </div>
-        <div className="card">
-          <div className="stats">
-            Total gLEMO Supply
-            <ContractData
+        <Link to="/swap">
+          <button id="statbuttons">
+            <img id="lemonimg" src={lemonicon} alt="lemonicon"></img>
+            <div id="stats">
+              Your gLEMO Balance{" "}
+              <ContractData
+                drizzle={drizzle}
+                drizzleState={drizzleState}
+                contract="TutorialToken"
+                method="balanceOf"
+                methodArgs={[drizzleState.accounts[0]]}
+              />
+            </div>
+          </button>
+        </Link>
+        <Link to="/swap">
+          <button id="statbuttons">
+            <div id="stats">
+            Total gLEMO Supply{" "}
+              <ContractData
               drizzle={drizzle}
               drizzleState={drizzleState}
               contract="TutorialToken"
@@ -57,8 +61,10 @@ function Home({ drizzle, drizzleState }) {
               method="symbol"
               hideIndicator
             />
-          </div>
-        </div>
+            </div>
+          </button>
+        </Link>
+        
         <footer id="homefooter">
           <a id="footerlinks" href="http://github.com">
             LemoSwap Contract
@@ -110,44 +116,49 @@ function Home({ drizzle, drizzleState }) {
           align-items: center;
           flex-direction: row;
         }
-        .card {
+        
+        #statbuttons {
+          font-size: 15px;
           display: flex;
-          background: #d3d3d3;
+          align-items: center;
+          justify-content: center;
+          background: #d9d9d9;
           box-shadow: #c5c5c5 1px 1px 0px inset;
-          width: 400px;
+          width: 350px;
           height: 110px;
-          margin: 10px;
+          margin: 5px;
           border-radius: 12px;
+          border-style: none;
         }
+        #statbuttons:hover {
+          cursor: pointer;
+          background: #b1b1b1;
+        }
+
         #lemonimg {
-          margin: 25px -50px 0px 25px;
+          margin: 5px -50px 0px 25px;
           height: 50px;
         }
-        .stats {
+        #stats {
           display: flex;
           width: 100%;
-          justify-content: center;
           flex-direction: column;
         }
         #homefooter {
-            position: fixed;
-            width: 100%;
-            left: 0;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-          }
+          position: fixed;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+        }
 
-          #footerlinks {
-            margin: 30px;
-          }
+        #footerlinks {
+          margin: 30px;
+        }
         @media only screen and (max-width: 800px) {
           .cards {
             flex-direction: column;
-          }
-          .card {
-            display: flex;
-            width: 80%;
           }
           #lemonimg {
             height: 50px;

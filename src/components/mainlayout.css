@@ -16,7 +16,7 @@ a {
   margin: 10px;
   text-decoration: none;
 }
-button {
+#unlockbutton {
   margin-top: 5px;
   color: #000;
   cursor: pointer;
@@ -25,10 +25,10 @@ button {
   box-shadow: 0px 1px 10px #000;
 }
 
-button:hover {
+#unlockbutton:hover {
   color: #4b4b4b;
 }
-button:hover {
+#unlockbutton:hover {
   color: #4b4b4b;
 }
 

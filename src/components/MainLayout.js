@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../pages/home";
 import About from "../pages/about";
+import Swap from "../pages/swap";
 import favicon from "../favicon.png";
 import "./mainlayout.css";
 function MainLayout({ drizzle, drizzleState }) {
@@ -64,6 +65,9 @@ function MainLayout({ drizzle, drizzleState }) {
           </Route>
           <Route exact path="/about">
             <About drizzle={drizzle} drizzleState={drizzleState}/>
+          </Route>
+          <Route exact path="/swap">
+            <Swap drizzle={drizzle} drizzleState={drizzleState}/>
           </Route>
         </Switch>
       </div>
