@@ -102,7 +102,7 @@ function Home({ drizzle, drizzleState }) {
           color: #4b4b4b;
           font-size: 18px;
           font-weight: 400;
-          margin: 0px;
+          margin: 5px;
           padding: 0px;
           text-align: center;
         }
@@ -124,7 +124,7 @@ function Home({ drizzle, drizzleState }) {
           justify-content: center;
           background: #d9d9d9;
           box-shadow: #c5c5c5 1px 1px 0px inset;
-          width: 350px;
+          width: 390px;
           height: 110px;
           margin: 5px;
           border-radius: 12px;
