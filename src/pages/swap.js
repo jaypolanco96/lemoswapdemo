@@ -38,7 +38,7 @@ function Swap({ drizzle, drizzleState }) {
                 placeholder="0.0"
               ></input>
               <button id="maxbutton">MAX</button>
-              <button>gLEMO</button>
+              <button id="coinbutton">gLEMO</button>
             </div>
           </div>
           <div className="topcontainer">
@@ -72,25 +72,42 @@ function Swap({ drizzle, drizzleState }) {
                 id="inputs"
                 placeholder="0.0"
               ></input>
-              <button>MAX</button>
-              <button>USDC</button>
+
+              <button id="maxbutton">MAX</button>
+              <button id="coinbutton">USDC</button>
+            </div>
+            <div className="topheader">
+              <div
+                style={{
+                  color: "rgb(86, 90, 105)",
+                  fontWeight: "0",
+                  fontFamily: "Inter",
+                }}
+                placeholder="0.0"
+              >
+                Price
+              </div>
+              <div
+                style={{
+                  color: "rgb(86, 90, 105)",
+                  fontWeight: "0",
+                  fontFamily: "Inter",
+                }}
+                placeholder="0.0"
+              >
+                1.01 ETH per gLEMO
+              </div>
             </div>
             <button id="swapbutton">Swap</button>
           </div>
         </div>
       </div>
       <style jsx>{`
-        .container {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 100%;
-        }
         .swapbox {
           display: flex;
           flex-direction: column;
-          width: 375px;
-          height: 375px;
+          width: 420px;
+          height: 360px;
           background: #d9d9d9;
           box-shadow: #c5c5c5 1px 1px 0px inset;
           border-radius: 30px;
@@ -98,7 +115,7 @@ function Swap({ drizzle, drizzleState }) {
         .topcontainer {
           height: 50px;
           border-radius: 12px;
-          margin: 10px;
+          margin: 5px 15px 50px 10px;
         }
         .topheader {
           margin: 20px;
@@ -111,21 +128,45 @@ function Swap({ drizzle, drizzleState }) {
           color: rgb(86, 90, 105);
         }
         #inputs {
+          font-size: 24px;
+          width: 170px;
           border-style: none;
           background-color: #d9d9d9;
         }
 
         #maxbutton {
           height: 28px;
-          border: 1px solid ;
+          border-style: none;
           border-radius: 0.5rem;
           font-size: 0.875rem;
           font-weight: 500;
-          margin-right: 0.5rem;
-          color: ;
+        }
+
+        #swapbutton {
+          font-family: "Inter";
+          color: #fff;
+          background-color: #4b4b4b;
+          font-size: 16px;
+          font-weight: 500;
+          height: 62px;
+          width: 100%;
+          border-radius: 12px;
+          border-style: none;
         }
         button {
-            cursor: pointer;
+          cursor: pointer;
+        }
+        #coinbutton {
+            height: 28px;
+          border-style: none;
+          border-radius: 0.5rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+        @media only screen and (max-width: 600px) {
+          .swapbox {
+            width: 380px;
+          }
         }
       `}</style>
     </div>
